@@ -13,7 +13,8 @@ const routes: Routes = [
 
 
   //default paths
-  {path: '', component:LandingComponent}
+  {path: '', component:LandingComponent},
+  {path: '**', component:LandingComponent}
 ];
 
 @NgModule({
