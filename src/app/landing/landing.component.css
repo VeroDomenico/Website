@@ -1,0 +1,22 @@
+.flex-item-col-right{
+  flex: 2;
+  height:100%;
+}
+.flex-item-col-left{
+  flex:1;
+  border: 3px dashed red;
+}
+.flex-container{
+  display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ background-color: #dfe5ed;
+}
+
+
+/* Media query for breakpoint */
+@media screen and (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+  }
+}
