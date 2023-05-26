@@ -4,7 +4,6 @@
 }
 .flex-item-col-left{
   flex:1;
-  border: 3px dashed red;
 }
 .flex-container{
   display: flex;
