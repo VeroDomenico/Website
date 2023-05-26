@@ -3,9 +3,12 @@
   height:100%;
 }
 .flex-item-col-left{
+  justify-content:right;
+  border: 1px dashed red;
   flex:1;
 }
 .flex-container{
+  padding: 20px;
   display: flex;
  flex-direction: row;
  flex-wrap: wrap;
@@ -17,5 +20,9 @@
 @media screen and (max-width: 768px) {
   .flex-container {
     flex-direction: column;
+  }
+  .flex-item-col-right{
+    padding-top:10px;
+    justify-content: center;
   }
 }
