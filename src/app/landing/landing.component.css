@@ -2,6 +2,24 @@
   flex: 2;
   height:100%;
 }
+.flex-infobox-redirects{
+  justify-content:center;
+
+}
+.flex-infobox-redirects-container{
+  justify-content:space-between;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #dfe5ed;
+}
+
+.flex-infobox-item{
+}
+
+
 .flex-item-col-left{
   justify-content:right;
   border: 1px dashed red;
