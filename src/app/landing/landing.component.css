@@ -15,6 +15,10 @@
   flex-wrap: wrap;
   background-color: #dfe5ed;
 }
+.flex-infobox-redirects-container svg{
+  height : 100%;
+  width: 100%;
+}
 
 .flex-infobox-item{
 }
@@ -22,7 +26,6 @@
 
 .flex-item-col-left{
   justify-content:right;
-  border: 1px dashed red;
   flex:1;
 }
 .flex-container{
