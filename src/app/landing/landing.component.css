@@ -42,6 +42,15 @@
   .flex-container {
     flex-direction: column;
   }
+.flex-infobox-redirects-container{
+    justify-content:space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: #dfe5ed;
+  }
   .flex-item-col-right{
     padding-top:10px;
     justify-content: center;
