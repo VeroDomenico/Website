@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import {ConsoleLogger} from "@angular/compiler-cli";
 
 @Component({
@@ -6,14 +7,29 @@ import {ConsoleLogger} from "@angular/compiler-cli";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
+//Class scope
 export class AppComponent {
   title = 'website';
+
+  scroll(id: string){
+    let webElem = document.getElementById(id);
+    if (webElem === null){
+      console.log("Webelem found to be null")
+      return
+    }
+    webElem!.scrollIntoView({behavior:"smooth"});
+  }
 }
 
 // On Dom Load
 //Wait until the content of the page has been loaded prior to handling thi
 document.addEventListener("DOMContentLoaded", function() {
   let navbar = document.getElementById("NavigationBar");
+
+
+
+  // onscroll functionality
   window.onscroll = function () {
     stickyNav()
   };
@@ -35,3 +51,4 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 
 // Basic Functionality
+

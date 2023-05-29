@@ -3,17 +3,20 @@
 <nav class="bg-gray-800" id="NavigationBar">
 
   <div class="flex justify-center">
-    <button class="hover:bg-gray-900 text-white font-bold py-4 px-4 rounded" href=#About>
+    <button (click)="scroll('Opener')" class="hover:bg-gray-900 text-white font-bold py-4 px-4 rounded">
       Home
     </button>
-    <button class="hover:bg-gray-900 text-white font-bold py-4 px-4 rounded" routerLink="projects">
-      Projects
+     <button (click)="scroll('About')" class="hover:bg-gray-900 text-white font-bold py-4 px-4 rounded">
+      About
     </button>
-    <button class="hover:bg-gray-900 text-white font-bold py-4 px-4 rounded" routerLink="philosophy">
+     <button (click)="scroll('Philosophy')" class="hover:bg-gray-900 text-white font-bold py-4 px-4 rounded">
       Philosophy
     </button>
-    <button class="hover:bg-gray-900 text-white font-bold py-4 px-4 rounded" routerLink="resume">
+     <button (click)="scroll('Resume')" class="hover:bg-gray-900 text-white font-bold py-4 px-4 rounded">
       Resume
+    </button>
+    <button (click)="scroll('Projects')" class="hover:bg-gray-900 text-white font-bold py-4 px-4 rounded">
+      Projects
     </button>
   </div>
 </nav>
