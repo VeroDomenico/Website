@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'website';
 }
 
+// On Dom Load
 //Wait until the content of the page has been loaded prior to handling thi
 document.addEventListener("DOMContentLoaded", function() {
   let navbar = document.getElementById("NavigationBar");
@@ -26,10 +27,11 @@ document.addEventListener("DOMContentLoaded", function() {
     return
   }
   if (window.scrollY >= navbar!.offsetTop){
-    console.log("Made it")
     navbar!.classList.add("stickyNav")
     }else {
       navbar!.classList.remove("stickyNav")
     }
   }
 })
+
+// Basic Functionality
