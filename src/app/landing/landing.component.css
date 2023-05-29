@@ -1,3 +1,5 @@
+
+/* Flex box management*/
 .flex-item-col-right{
   flex: 2;
   height:100%;
@@ -13,7 +15,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: #dfe5ed;
+
 }
 .flex-infobox-redirects-container svg{
   height : 100%;
@@ -35,7 +37,36 @@
  flex-wrap: wrap;
 }
 
+/* Multi-Use Classes*/
+.fullscreen-section{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+/* Section coloration */
+
+#Opener{
+  background-color:#FF9933;
+}
+
+#About{
+  background-color:#6699CC;
+}
+
+#Philosophy{
+
+  background-color:#336699;
+}
+#Resume{
+
+
+}
+#Projects{
+  background-color:black;
+  color: white;
+}
 /* Media query for breakpoint */
 @media screen and (max-width: 768px) {
   .flex-container {
