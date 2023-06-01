@@ -63,8 +63,6 @@ document.addEventListener("DOMContentLoaded", function() {
       return
     }
     if (window.scrollY > banner!.offsetTop+200){
-      console.log("Scroll Y: "+ scrollY)
-      console.log(banner!.offsetTop + 20)
       banner!.classList.add("stickyBanner")
     } else{
       banner!.classList.remove("stickyBanner")
