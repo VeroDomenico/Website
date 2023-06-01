@@ -20,34 +20,58 @@ export class AppComponent {
     }
     webElem!.scrollIntoView({behavior:"smooth"});
   }
+
+  closeBanner(){
+    let banner = document.getElementById("banner")
+    banner!.hidden = true;
+  }
+
 }
 
 // On Dom Load
 //Wait until the content of the page has been loaded prior to handling thi
 document.addEventListener("DOMContentLoaded", function() {
   let navbar = document.getElementById("NavigationBar");
+  let banner = document.getElementById("banner");
 
 
 
   // onscroll functionality
   window.onscroll = function () {
     stickyNav()
+    stickyBanner()
   };
 
   // !. is sure the value we want to access is not null
   // ?. allows for null access and checking
   function stickyNav(){
     //Null check
-  if (navbar?.offsetHeight === null){
+  if (navbar?.offsetHeight == null){
     console.log("Offset found to be null")
     return
   }
-  if (window.scrollY >= navbar!.offsetTop){
+  if (window.scrollY >= navbar!.offsetTop+200){
     navbar!.classList.add("stickyNav")
     }else {
       navbar!.classList.remove("stickyNav")
     }
   }
+
+  function stickyBanner(){
+    if(banner?.offsetHeight == null){
+      console.log("offset of banner cannot be found")
+      return
+    }
+    if (window.scrollY > banner!.offsetTop+200){
+      console.log("Scroll Y: "+ scrollY)
+      console.log(banner!.offsetTop + 20)
+      banner!.classList.add("stickyBanner")
+    } else{
+      banner!.classList.remove("stickyBanner")
+    }
+  }
+
+
 })
 
 // Basic Functionality

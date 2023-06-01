@@ -1,7 +1,10 @@
+
+/* Classes */
 .stickyNav{
   position: fixed;
   top:0;
-  width: 100%
+  width: 100vw;
+  height:6vh;
 }
 
 .navflex-container{
@@ -9,13 +12,52 @@
   flex-wrap: wrap;
   justify-content:center;
   font-size: 15px;
+  z-index:1;
 }
 
+.stickyBanner{
+  position:fixed;
+  width:100%;
+  margin-top:6vh;
+}
+
+.banner{
+  z-index:1;
+  color:white;
+  background-color:black;
+}
+
+.banner-flex-container{
+  display:flex;
+  justify-content:center;
+  font-size: 14px;
+}
+
+.banner-flex-container button{
+  margin-left:auto;
+  color:white;
+  transform: rotate(45deg);
+  font-size:1.5em;
+}
+
+.banner-content-message{
+  margin-top:2.5vh;
+  position:absolute;
+  background-color:black;
+}
+.banner-content-message a{
+  color:yellow;
+}
+.banner-content-message a:hover{
+  color:blue;
+}
+
+/* Ids */
 #NavigationBar{
   width:100vw;
-
-
 }
+
+
 
 /* Change the wrap to be a button dropdown and enable then allow for col section */
 
@@ -23,4 +65,16 @@
 @media screen and (max-width: 768px) {
   .navflex-container {
   }
+  .banner-flex-container button{
+      margin-left:auto;
+      color:white;
+      transform: rotate(45deg);
+      font-size:1.5em;
+    }
+  .banner-content-message{
+      margin-top:2.5vh;
+      margin-left:1em;
+      position:relative;
+      background-color:black;
+    }
 }
