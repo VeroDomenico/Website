@@ -37,6 +37,7 @@
  flex-wrap: wrap;
 }
 
+
 /* Multi-Use Classes*/
 .fullscreen-section{
   height: 100vh;
@@ -46,10 +47,22 @@
   align-items: center;
 }
 
-/* Section coloration */
-
+/* Section coloration and ID sepecifics */
 #Opener{
   background-color:#FF9933;
+}
+/* animations */
+/* animations */
+@keyframes blinker {
+  0% { opacity: 1; }
+  40% { opacity: 1}
+  60% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+#blinkerAni {
+  animation: blinker 1s linear infinite;
+
 }
 
 #About{
@@ -69,6 +82,10 @@
   background-color:black;
   color: white;
 }
+
+
+
+
 /* Media query for breakpoint */
 @media screen and (max-width: 768px) {
   .flex-container {

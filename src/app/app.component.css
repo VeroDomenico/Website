@@ -43,7 +43,7 @@
 .banner-content-message{
   margin-top:2.5vh;
   position:absolute;
-  background-color:black;
+  text-align:center;
 }
 .banner-content-message a{
   color:yellow;
