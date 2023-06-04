@@ -27,7 +27,6 @@ async function typeWriter() {
   if(el!.innerText == null){
     return
   }
-  console.log("Made it to here")
   while (shouldContinue){
     for(let message in messageList){
     await typeWriterPrtMessage(el!, messageList[message], 30)
@@ -40,8 +39,6 @@ async function typeWriter() {
 }
 
 async function typeWriterPrtMessage(el: HTMLElement, message:String, ms:number){
-  console.log("Printing Message");
-
   for(let i = 0; i <= message.length; i++){
     await sleep(ms);
     el!.innerHTML = message.substring(0,i);
@@ -49,7 +46,6 @@ async function typeWriterPrtMessage(el: HTMLElement, message:String, ms:number){
 }
 
 async function typeWriterDelMessage(el: HTMLElement, message:String, ms:number){
-  console.log("deleting message")
   for(let i = message.length; i >= 0; i--){
     await sleep(ms);
     el!.innerText= el!.innerText.slice(0,i);

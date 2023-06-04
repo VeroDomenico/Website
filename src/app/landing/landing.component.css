@@ -39,13 +39,89 @@
 
 
 /* Multi-Use Classes*/
-.fullscreen-section{
+.fullscreen-section {
   height: 100vh;
   width:100vw;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.project-item-holder{
+  display:flex;
+
+  flex-direction: row;
+}
+
+.project-item-holder li{
+  background-color:#E5E4E2;
+  color:black;
+
+
+  display:flex;
+  flex-direction:column;
+  flex-shrink:0;
+  margin:10px;
+  border-radius: 20px;
+  width:336px;
+  height:480px;
+  overflow: hidden;
+  position: relative;
+
+}
+
+.project-figure-container{
+  height:200px;
+  width:336px;
+}
+
+.project-figure-display{
+    background-repeat: no-repeat;
+    background-image: url("src/assets/images/UnityGameProjectRedBadger.png");
+    background-size: contain;
+    position: absolute;
+    width:336px;
+    height:200px;
+}
+
+.project-card{
+  width:336px;
+  height:480px;
+
+}
+.project-scroller {
+  overflow: scroll;
+  width:100vw;
+}
+.project-card-title{
+  margin: 30px 0 40px;
+
+  text-align: center;
+  font-size: 16px;
+  font-weight: 800;
+}
+.project-title, span{
+  font-size: 14px;
+  font-weight:300;
+}
+.project-card-body{
+  margin-top: 20px;
+  margin-left: 15px;
+  font-size:12px;
+  text-align:left;
+}
+.project-card-footer{
+  font-size:12px;
+  margin: auto 0 40px;
+  text-align:center;
+}
+
+.project-card-footer-links{
+  color:blue;
+  margin:auto 0 20px;
+}
+
+
+
 
 /* Section coloration and ID sepecifics */
 #Opener{
