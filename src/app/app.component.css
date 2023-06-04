@@ -33,19 +33,22 @@
   display:flex;
   justify-content:center;
   font-size: 14px;
+
 }
 
 .banner-flex-container button{
   margin-left:auto;
+  margin-right: 10px;
   color:white;
   transform: rotate(45deg);
   font-size:1.5em;
 }
 
 .banner-content-message{
-  margin-top:2.5vh;
+  margin-top:20px;
   position:absolute;
   text-align:center;
+
 }
 .banner-content-message a{
   color:yellow;

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2, OnInit } from '@angular/core';
 
 import {ConsoleLogger} from "@angular/compiler-cli";
 
@@ -6,11 +6,19 @@ import {ConsoleLogger} from "@angular/compiler-cli";
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
+
 })
+
+
 
 //Class scope
 export class AppComponent {
-  title = 'website';
+  constructor(private renderer: Renderer2) { }
+
+  ngOnInit() {
+    this.renderer.setStyle(document.body, 'overflow-x', 'hidden');
+  }
+  title = 'Dominic Portolfio';
 
   scroll(id: string){
     let webElem = document.getElementById(id);
@@ -41,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
     stickyNav()
     stickyBanner()
   };
+
 
   // !. is sure the value we want to access is not null
   // ?. allows for null access and checking
