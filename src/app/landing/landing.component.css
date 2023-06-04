@@ -139,6 +139,11 @@
 #blinkerAni {
   animation: blinker 1s linear infinite;
 
+  font-size:30px;
+}
+
+#typewriter-input-box{
+  font-size:30px;
 }
 
 #About{
