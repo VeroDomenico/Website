@@ -54,6 +54,10 @@
   color:blue;
 }
 
+.footer{
+  background-color:black;
+}
+
 /* Ids */
 #NavigationBar{
   width:100vw;

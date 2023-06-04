@@ -48,7 +48,6 @@
 }
 .project-item-holder{
   display:flex;
-
   flex-direction: row;
 }
 
@@ -67,11 +66,13 @@
   overflow: hidden;
   position: relative;
 
+
 }
 
 .project-figure-container{
   height:200px;
   width:336px;
+  z-index:0;
 }
 
 .project-figure-display{
@@ -86,11 +87,11 @@
 .project-card{
   width:336px;
   height:480px;
-
 }
 .project-scroller {
   overflow: scroll;
   width:100vw;
+  margin: 0px 40px 10px;
 }
 .project-card-title{
   margin: 30px 0 40px;
