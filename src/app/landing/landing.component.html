@@ -11,7 +11,7 @@
 
   </div>
   <div class="flex-2 inline-flex font-extrabold text-4xl py-4">
-    <p id="typewriter-input-box"> </p> <span id="blinkerAni">&#x25ae;</span>
+    <p id="typewriter-input-box">{{currentMessage}} </p> <span id="blinkerAni">&#x25ae;</span>
   </div>
 </section>
 <section class="fullscreen-section" id="Opener">
@@ -83,7 +83,6 @@
     </div>
   </div>
 </section>
-
 <section class="fullscreen-section" id="About">
   About Section
 </section>
@@ -91,11 +90,10 @@
  Pilosophy Section
 </section>
 <section class="fullscreen-section" id="Resume">
-  <div class="page-container">
-      <div class="embed-container">
-        <iframe id="iframe-resume" src="https://docs.google.com/document/d/e/2PACX-1vTPKo0C4MJC73mjWwVorraiJefGftFWlo52n5FaellHzEtKCyt9V_VzBUYWePT0iXaAXkvlxemx4MNt/pub?embedded=true"></iframe>
-      </div>
-  </div>
+<div>
+  <button mat-raised-button color="primary" mat-button (click)="openResumeDialog()">Live Resume</button>
+  <!--<button mat-raised-button color="primary" mat-button (click)="">Download</button>-->
+</div>
 </section>
 <section class="fullscreen-section" id="Projects">
 <div class="project-scroller">

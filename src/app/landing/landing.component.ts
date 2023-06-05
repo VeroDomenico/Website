@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ResumePopupComponent } from '../resume-popup/resume-popup.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatButtonModule} from '@angular/material/button';
 
 @Component({
   selector: 'app-landing',
@@ -6,51 +11,51 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landing.component.css']
 })
 export class LandingComponent implements OnInit {
+  messageList = ["Developer", "Designer", "Entrepreneur"];
+  currentMessage = '';
+  shouldContinue = true;
 
-
-  constructor() { }
+  constructor(private dialog: MatDialog) {}
 
   ngOnInit(): void {
-    typeWriter()
+    this.startTypewriter();
+  }
+  openResumeDialog() {
+    const dialogRef = this.dialog.open(ResumePopupComponent,{
+      panelClass: 'no-scroll-dialog'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
-}
-
-
-
-const messageList = ["Developer","Designer", "Entrepreneur"]
-
-const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
-let shouldContinue = true;
-
-async function typeWriter() {
-  let el = document!.getElementById("typewriter-input-box")
-
-  if(el!.innerText == null){
-    return
-  }
-  while (shouldContinue){
-    for(let message in messageList){
-    await typeWriterPrtMessage(el!, messageList[message], 30)
-    await sleep(3000);
-    await typeWriterDelMessage(el!, messageList[message], 30)
-    await sleep(1000);
+  async startTypewriter() {
+    while (this.shouldContinue) {
+      for (let i = 0; i < this.messageList.length; i++) {
+        await this.typeWriterPrtMessage(this.messageList[i], 30);
+        await this.sleep(3000);
+        await this.typeWriterDelMessage(this.messageList[i], 30);
+        await this.sleep(1000);
+      }
     }
   }
 
-}
-
-async function typeWriterPrtMessage(el: HTMLElement, message:String, ms:number){
-  for(let i = 0; i <= message.length; i++){
-    await sleep(ms);
-    el!.innerHTML = message.substring(0,i);
-  }
-}
-
-async function typeWriterDelMessage(el: HTMLElement, message:String, ms:number){
-  for(let i = message.length; i >= 0; i--){
-    await sleep(ms);
-    el!.innerText= el!.innerText.slice(0,i);
+  async typeWriterPrtMessage(message: string, ms: number) {
+    for (let i = 0; i <= message.length; i++) {
+      await this.sleep(ms);
+      this.currentMessage = message.substring(0, i);
+    }
   }
 
+  async typeWriterDelMessage(message: string, ms: number) {
+    for (let i = message.length; i >= 0; i--) {
+      await this.sleep(ms);
+      this.currentMessage = message.substring(0, i);
+    }
+  }
+
+  sleep(ms: number) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
 }

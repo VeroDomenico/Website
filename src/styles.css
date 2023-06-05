@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
 
 @tailwind base;
@@ -10,4 +11,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #dfe5ed;
+}
+
+.no-scroll-dialog .mat-dialog-container {
+  overflow: hidden !important;
 }
