@@ -37,6 +37,10 @@
  flex-wrap: wrap;
 }
 
+.resume-submission-form{
+  display:flex;
+  flex-direction:column;
+}
 
 /* Multi-Use Classes*/
 .fullscreen-section {
@@ -46,6 +50,10 @@
   justify-content: center;
   align-items: center;
 }
+
+
+
+
 .project-item-holder{
   display:flex;
   flex-direction: row;
