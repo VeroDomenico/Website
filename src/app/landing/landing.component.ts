@@ -16,6 +16,8 @@ export class LandingComponent implements OnInit {
 
 }
 
+
+
 const messageList = ["Developer","Designer", "Entrepreneur"]
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
