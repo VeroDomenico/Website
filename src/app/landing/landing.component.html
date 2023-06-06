@@ -3,7 +3,7 @@
 <!-- Divs divided into 12 so u can do col-4 to select sizing of a portion of the 12 6 would be half Bootstraps grid system need to do sizing of each column per screen size -->
 
 <!-- Image at front of page-->
-<section class="fullscreen-section flex-col" id="landing">
+<section class="fullscreen-section flex-col" id="Home">
   <div class="justify-center font-extrabold text-4xl py-2" >
   Dominic Meconi
   </div>
@@ -11,9 +11,10 @@
     <p id="typewriter-input-box">{{currentMessage}} </p> <span id="blinkerAni">&#x25ae;</span>
   </div>
 </section>
-<section class="fullscreen-section" id="Opener">
+<section class="fullscreen-section" id="Resume">
   <div class="flex-container">
     <div class="flex-item-col-left">
+
     <div class="flex justify-center col-span-4">
       <div class="">
         <!-- they changed the img-circle to rounded-circle -->
@@ -69,9 +70,12 @@
             <span class="flex justify-center">Interested in Cyber Security</span>
             <span class="flex justify-center">AND</span>
             <span class="flex justify-center">Machine Learning</span>
+            <button id="viewResumeButton" mat-raised-button color="primary"  mat-button (click)="openResumeDialog()">Live Resume</button>
           </span>
+
       </div>
     </div>
+
     </div>
     <div class="flex-item-col-right">
       <h1 class="font-medium leading-tight text-4xl mt-0 mb-2">Greetings</h1>
@@ -86,22 +90,37 @@
 <!--<section class="fullscreen-section" id="Philosophy">-->
 <!-- Pilosophy Section-->
 <!--</section>-->
-<section class="fullscreen-section" id="Resume">
-<div>
+<section class="fullscreen-section" id="Contact">
 
-Contact Form to be implemented
+
+
 <form #formData="ngForm"  (submit)="sendDataToFireBase(formData)">
-  <input type="text" [(ngModel)]="name" name="name" placeholder="Enter your name" #ctrl="ngModel" required />
-  <input type="email" [(ngModel)]="email" name="email" placeholder="Enter your email" />
-  <input type="email" [(ngModel)]="message" name="message" placeholder="Enter your message" />
-  <button type="submit">Submit</button>
+<div class="resume-submission-form">
+
+<mat-form-field>
+
+  <mat-label>Enter your full-name</mat-label>
+  <input matInput type="text" [(ngModel)]="name" name="name" placeholder="Enter your name" #ctrl="ngModel" required />
+  </mat-form-field>
+   <mat-form-field>
+   <mat-label>Enter your email</mat-label>
+  <input matInput type="email" [(ngModel)]="email" name="email" placeholder="Enter your email" #ctrl="ngModel" required/>
+  </mat-form-field>
+   <mat-form-field>
+   <mat-label >Enter your message</mat-label>
+  <input class="text-center" id="message-box" matInput type="text" [(ngModel)]="message" name="message" placeholder="Enter your message" #ctrl="ngModel" required/>
+   </mat-form-field>
+   <div class="resume-and-contact">
+
+  <button id="submitResumeButton" mat-raised-button color="primary" mat-button type="submit">Submit</button>
+  </div>
+   </div>
 </form>
 
 
 
-<button mat-raised-button color="primary" mat-button (click)="openResumeDialog()">Live Resume</button>
 
-</div>
+
 </section>
 <section class="fullscreen-section" id="Projects">
 <div class="project-scroller">
