@@ -4,42 +4,52 @@ import { ResumePopupComponent } from '../resume-popup/resume-popup.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
-import {Firestore, collection, setDoc, doc, getDoc} from "@angular/fire/firestore";
-import {Observable} from "rxjs";
+import {Firestore, collection, setDoc, doc, getDoc, collectionData} from "@angular/fire/firestore";
+import {NgForm} from "@angular/forms";
+
+
+//interfaces
+  export interface ContractForm{
+      email: String;
+      name: String;
+      message: String;
+  }
+
 
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.css']
 })
+
 export class LandingComponent implements OnInit {
   messageList = ["Developer", "Designer", "Entrepreneur"];
   currentMessage = '';
   shouldContinue = true;
-  col:any;
+  name: string = '';
+  message: string = '';
+  email: string = '';
 
-  constructor(private dialog: MatDialog, db : Firestore) {
-  this.col = collection(db,'test');
 
+  constructor(private dialog: MatDialog, private readonly firestore : Firestore) {
 
   }
-
-
-
+ collection = collection(this.firestore, 'ContactForm')
 
 
   ngOnInit(): void {
-
     this.startTypewriter();
 
-    this.pullData()
   }
-  pullData(){
-    let docRef = doc(this.col,'test')
-    let docSnap = getDoc(docRef);
 
-    console.log("Document data:", docSnap);
 
+  sendDataToFireBase(formData: NgForm){
+    console.log(formData.value)
+        setDoc(doc(this.collection),{
+          name: formData.value.name,
+          email:formData.value.email,
+          message: formData.value.message
+          });
   }
 
   openResumeDialog() {
@@ -51,6 +61,7 @@ export class LandingComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
     });
   }
+
 
   async startTypewriter() {
     while (this.shouldContinue) {
