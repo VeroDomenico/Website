@@ -46,7 +46,7 @@
 .resume-and-contact{
   display:flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
 
 
 }
@@ -197,12 +197,12 @@
 }
 
 #viewResumeButton{
-  background-color:red;
+  background-color:blue;
   width:100%;
 
 }
 #submitResumeButton{
-  width:40%;
+  width:50%;
   background-color:green;
 }
 
