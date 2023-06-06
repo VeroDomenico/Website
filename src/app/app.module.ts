@@ -10,6 +10,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatSelectModule} from "@angular/material/select";
 import { MatInputModule} from "@angular/material/input";
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -27,7 +31,10 @@ import { MatInputModule} from "@angular/material/input";
     MatFormFieldModule,
     MatIconModule,
     MatSelectModule,
-    MatInputModule
+    MatInputModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
+    FormsModule
 
   ],
   providers: [],
