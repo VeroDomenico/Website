@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "portfoliosite-a0198": {
+      "hosting": {
+        "website": [
+          "portfoliosite-a0198"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "portfoliosite-a0198"
+  }
+}
