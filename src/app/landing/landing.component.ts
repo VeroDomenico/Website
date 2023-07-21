@@ -5,7 +5,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import {Firestore, collection, setDoc, doc, getDoc, collectionData} from "@angular/fire/firestore";
-import {NgForm} from "@angular/forms";
+import {FormGroup, NgForm} from "@angular/forms";
 
 
 //interfaces
@@ -51,6 +51,8 @@ export class LandingComponent implements OnInit {
           message: formData.value.message
           });
   }
+  
+
 
   openResumeDialog() {
     const dialogRef = this.dialog.open(ResumePopupComponent,{
